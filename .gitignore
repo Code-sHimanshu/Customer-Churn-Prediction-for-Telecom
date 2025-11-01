@@ -1,9 +1,17 @@
-venv/
+# Python
 __pycache__/
 *.pyc
-*.dll
-*.pkl
-*.joblib
-*.csv
-*.json
+*.pyo
+*.pyd
+*.log
+
+# Virtual environments
+venv/
+.env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
 .DS_Store
+Thumbs.db
