@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Churn Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; text-align: center; margin-top: 40px; }
+        form { background: white; padding: 20px; border-radius: 10px; display: inline-block; }
+        input, select { margin: 8px; padding: 8px; border-radius: 5px; width: 200px; }
+        button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Customer Churn Prediction</h1>
+    <form action="/predict" method="post">
+        <input type="text" name="tenure" placeholder="Tenure (months)" required><br>
+        <input type="text" name="MonthlyCharges" placeholder="Monthly Charges" required><br>
+        <input type="text" name="TotalCharges" placeholder="Total Charges" required><br>
+        <select name="InternetService">
+            <option value="DSL">DSL</option>
+            <option value="Fiber optic">Fiber optic</option>
+            <option value="No">No</option>
+        </select><br>
+        <select name="Contract">
+            <option value="Month-to-month">Month-to-month</option>
+            <option value="One year">One year</option>
+            <option value="Two year">Two year</option>
+        </select><br>
+        <select name="PaymentMethod">
+            <option value="Electronic check">Electronic check</option>
+            <option value="Mailed check">Mailed check</option>
+            <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+            <option value="Credit card (automatic)">Credit card (automatic)</option>
+        </select><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    <h3>{{ prediction_text }}</h3>
+    <p>{{ confidence }}</p>
+</body>
+</html>

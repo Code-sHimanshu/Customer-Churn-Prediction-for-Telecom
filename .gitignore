@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+*.egg-info/
+models/
+data/processed/
+.ipynb_checkpoints/
+.vscode/
+.DS_Store
